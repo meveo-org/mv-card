@@ -16,7 +16,7 @@ export class MvCard extends LitElement {
         border-radius: 15px;
         margin-top: 75px;
         font-family: Arial;
-        padding-bottom: 100px;
+
         margin: auto;
         margin-top: 100px;
       }
@@ -77,7 +77,7 @@ export class MvCard extends LitElement {
       }
 
       .card-component fieldset {
-        box-shadow: rgb(71 57 154 / 16%) 0px 0px 8px 2px;
+
         border: none;
         width: 80%;
         margin: 20px auto auto;
@@ -90,17 +90,19 @@ export class MvCard extends LitElement {
         border-bottom: solid 1px #ccc;
         width: 100%;
         position: relative;
-        top: 30px;
         display: block;
         line-height: 30px;
-        margin-bottom: 40px;
+        margin-top: 10px;
+        font-weight:bold;
+        margin-bottom:10px
       }
       .card-component fieldset div {
-        line-height: 40px;
+        line-height: 25px;
         display: flex;
       }
       .card-component fieldset div label {
         flex: initial;
+        font-weight:bold;
       }
       .card-component fieldset div input {
         flex: 1 1 auto;
@@ -118,14 +120,16 @@ export class MvCard extends LitElement {
 
   constructor() {
     super()
-    this.data = []
+
+    this.data=[]
   }
 
   render() {
-    let options = this.data
-    //console.log(this.data)
+    let options = {...this.data}
 
-    this.options = options.map((item) => item.link)
+ //   options.map((i,index) => console.log(index))
+
+    console.log(options)
 
     return html`
       <div class="card-component">
@@ -139,57 +143,45 @@ export class MvCard extends LitElement {
         </div>
         <div class="card-container">
           <div class="name">
-            Alex
-            <strong>NAVALMY</strong>
+            ${options.name}
+            <strong>${options.surname}</strong>
           </div>
           <div class="birth">
-            <div class="birthday">16/09/1972</div>
+            <div class="birthday">${options.birthday}</div>
             |
-            <div class="city">Moscow</div>
+            <div class="city">${options.city}</div>
           </div>
           <div class="infos">
             <div class="nationality">
               <strong>Nationality :</strong>
-              RU
+              ${options.nationality}
             </div>
             <div class="aliasses">
               <strong>Aliases :</strong>
-              Navaninich
+              ${options.alias}
             </div>
           </div>
         </div>
         <div class="content" id="card">
           <fieldset>
-            <legend>Locations</legend>
+            <legend>Online identity</legend>
             <div>
-              <label>Places :</label>
-              <input type="text" />
+              <label>Social Network : </label>
+              ${options.socialnetwork[0]} ${options.socialnetwork[1]}
+            </div>
+            </fieldset>
+            <fieldset>
+            <legend>Contact Details</legend>
+            <div>
+              <label>E-mail : </label>
+              ${options.email}
+            </div>
+            <div>
+              <label>Phone : </label>
+              ${options.phone[0]}<br/>
+              ${options.phone[1]}
             </div>
 
-            <div>
-              <label>Visited Places :</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Places :</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Places :</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Places :</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Places :</label>
-              <input type="text" />
-            </div>
           </fieldset>
         </div>
       </div>

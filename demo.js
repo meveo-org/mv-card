@@ -8,20 +8,23 @@ import '@meveo-org/mv-container'
 
 import './mv-card.js'
 
-const data = {
+const PROFILE_DATA = {
   name: 'Alex',
   surname: 'NAVALMY',
   birthday: '10/09/1972',
   city: 'Moscow',
   nationality: 'RU',
-  Alias: 'navaninich',
+  alias: 'navaninich',
+  socialnetwork : {0:'instagram',1:'pinterest'},
+  email:'a.navalny@yandex.com',
+  phone:{0:'+7 4322 5384 11',1:'+7 4543 9921 03'}
 }
 
 export class MvCardDemo extends LitElement {
   static get properties() {
     return {
       theme: { type: String, attribute: true },
-      data: { type: Array, attribute: false, reflect: true },
+      data: { type: Object, attribute: false, reflect: true },
     }
   }
 
@@ -40,7 +43,8 @@ export class MvCardDemo extends LitElement {
   constructor() {
     super()
     this.theme = 'light'
-    this.data = data
+    this.data = {}
+    
   }
 
   render() {
@@ -70,11 +74,16 @@ export class MvCardDemo extends LitElement {
       </fieldset>
 
       <mv-container .theme="${theme}">
-        <mv-card .data="${this.data}"></mv-card>
+        <mv-card .data="${PROFILE_DATA}"></mv-card>
       </mv-container>
+
+      test
     `
   }
   firstUpdated() {}
+
+
+
 
   changeTheme = (originalEvent) => {
     const {
