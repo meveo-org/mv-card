@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@meveo-org/mv-button": "^1.0.2",
+    "@meveo-org/mv-container": "^1.0.0",
+    "@meveo-org/mv-theme": "^1.0.0",
+    "lit": "^2.4.1"
+  }
+}
