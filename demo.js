@@ -11,6 +11,7 @@ import './mv-card.js'
 const PROFILE_DATA = {
   name: 'Alex',
   surname: 'NAVALMY',
+  gender:'male',
   picture : 'https://thispersondoesnotexist.com/image?rand_number=0.9769817276185417',
   birthday: '10/09/1972',
   city: 'Moscow',

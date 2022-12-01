@@ -79,7 +79,7 @@ export class MvCard extends LitElement {
       .card-component fieldset {
         border: none;
         width: 80%;
-        margin: 20px auto auto;
+        margin: 0 auto auto;
         border-radius: 15px;
         font-size: 11px;
         text-align: left;
@@ -140,12 +140,16 @@ export class MvCard extends LitElement {
         font-size: 12px;
         padding: 0 4%;
         border-bottom: solid 1px #ccc;
-        line-height: 10px;
-        line-height: 0px;
-        margin-top: 50px;
-      }
+        line-height: 30px;
+
+ 
+        background-image: url( './src/img/icon-+.png' );
+      background-position : 90% ;
+    background-repeat:no-repeat;
+  }
+      
       h3 span {
-        background-color: #fff;
+        background-color:#fff;
         padding: 0 20px;
       }
 
@@ -159,6 +163,7 @@ export class MvCard extends LitElement {
       .form {
         display: none;
       }
+      .content{padding-top:25px;}
     `
   }
 
@@ -187,12 +192,12 @@ export class MvCard extends LitElement {
         <div class="card-container">
           <div class="name">
             ${options.name}
-            <strong>${options.surname}</strong>
+            <strong>${options.surname}</strong><img src="./src/img/icon-gender-${options.gender}.png"/>
           </div>
           <div class="birth">
-            <div class="birthday">${options.birthday}</div>
+            <div class="birthday"><img src="./src/img/icon-date.png"/> ${options.birthday}</div>
             |
-            <div class="city">${options.city}</div>
+            <div class="city">${options.city} <img src="./src/img/icon-location.png"/></div>
           </div>
           <div class="infos">
             <div class="nationality">
