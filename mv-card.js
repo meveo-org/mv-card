@@ -115,7 +115,7 @@ export class MvCard extends LitElement {
         box-shadow: rgb(204 204 204) 0px 0px 10px;
         border-radius: 20px;
       }
-      .form .input {
+      .forminput .input {
         border: none;
         background-color: #d2ebf9;
         border-radius: 10px;
@@ -125,10 +125,10 @@ export class MvCard extends LitElement {
         float: right;
         box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
       }
-      .form label {
+      .forminput label {
         width: 50%;
       }
-      .form fieldset {
+      .forminput fieldset {
         margin: 0;
       }
       .card-component {
@@ -227,7 +227,7 @@ export class MvCard extends LitElement {
           </fieldset>
           </div>
 
-          <div class="form" id="form1">
+          <div class="forminput" id="form1">
             <fieldset>
               <legend>Locations</legend>
               <div>
@@ -246,7 +246,7 @@ export class MvCard extends LitElement {
           </div>
 
 
-          <div class="form" id="form2">
+          <div class="forminput" id="form2">
             <fieldset>
               <legend>Contact Details</legend>
               <div>
