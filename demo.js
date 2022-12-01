@@ -11,6 +11,7 @@ import './mv-card.js'
 const PROFILE_DATA = {
   name: 'Alex',
   surname: 'NAVALMY',
+  picture : 'https://thispersondoesnotexist.com/image?rand_number=0.9769817276185417',
   birthday: '10/09/1972',
   city: 'Moscow',
   nationality: 'RU',
@@ -77,7 +78,7 @@ export class MvCardDemo extends LitElement {
         <mv-card .data="${PROFILE_DATA}"></mv-card>
       </mv-container>
 
-      test
+
     `
   }
   firstUpdated() {}

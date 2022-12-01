@@ -131,13 +131,13 @@ export class MvCard extends LitElement {
 
     console.log(options)
 
-    return html`
+  return  html`
       <div class="card-component">
         <div class="avatar-container">
           <div class="white-circle">
             <img
               class="avatar"
-              src="https://thispersondoesnotexist.com/image?rand_number=0.9769817276185417"
+              src="${options.picture}"
             />
           </div>
         </div>
@@ -167,8 +167,9 @@ export class MvCard extends LitElement {
             <legend>Online identity</legend>
             <div>
               <label>Social Network : </label>
-              ${options.socialnetwork[0]} ${options.socialnetwork[1]}
-            </div>
+
+              ${this.getSocialNetworks(options)}
+    </div>
             </fieldset>
             <fieldset>
             <legend>Contact Details</legend>
@@ -178,8 +179,7 @@ export class MvCard extends LitElement {
             </div>
             <div>
               <label>Phone : </label>
-              ${options.phone[0]}<br/>
-              ${options.phone[1]}
+              ${this.getPhoneNumbers(options)}
             </div>
 
           </fieldset>
@@ -189,6 +189,36 @@ export class MvCard extends LitElement {
   }
 
   firstUpdated() {}
+
+getSocialNetworks(options){
+
+
+
+  let socialNetworks = ''
+  for (let i=0;i<Object.keys(options.socialnetwork).length;i++){  socialNetworks = socialNetworks +', '+ options.socialnetwork[i]  }
+return  html `${socialNetworks}`
+
+
+
+
+
+}
+
+getPhoneNumbers(options){
+
+  let phoneNumbers = ''
+  
+  for (let i=0;i<Object.keys(options.phone).length;i++){  phoneNumbers = phoneNumbers +', '+ options.phone[i]  }
+
+ return  html `${phoneNumbers}`
+
+}
+
+
+
+
+
+
 }
 
 window.customElements.define('mv-card', MvCard)
