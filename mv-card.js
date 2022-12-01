@@ -77,7 +77,6 @@ export class MvCard extends LitElement {
       }
 
       .card-component fieldset {
-
         border: none;
         width: 80%;
         margin: 20px auto auto;
@@ -93,8 +92,8 @@ export class MvCard extends LitElement {
         display: block;
         line-height: 30px;
         margin-top: 10px;
-        font-weight:bold;
-        margin-bottom:10px
+        font-weight: bold;
+        margin-bottom: 10px;
       }
       .card-component fieldset div {
         line-height: 25px;
@@ -102,12 +101,63 @@ export class MvCard extends LitElement {
       }
       .card-component fieldset div label {
         flex: initial;
-        font-weight:bold;
+        font-weight: bold;
       }
       .card-component fieldset div input {
         flex: 1 1 auto;
         height: 25px;
         line-height: 25px;
+      }
+      .form {
+        width: 88%;
+        margin: 0 4% 20px 4%;
+        padding: 2%;
+        box-shadow: rgb(204 204 204) 0px 0px 10px;
+        border-radius: 20px;
+      }
+      .form .input {
+        border: none;
+        background-color: #d2ebf9;
+        border-radius: 10px;
+        height: 20px;
+        line-height: 20px;
+        width: 70%;
+        float: right;
+        box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+      }
+      .form label {
+        width: 50%;
+      }
+      .form fieldset {
+        margin: 0;
+      }
+      .card-component {
+        padding-bottom: 20px;
+      }
+      h3 {
+        text-align: left;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 0 4%;
+        border-bottom: solid 1px #ccc;
+        line-height: 10px;
+        line-height: 0px;
+        margin-top: 50px;
+      }
+      h3 span {
+        background-color: #fff;
+        padding: 0 20px;
+      }
+
+      .show {
+        display: block !important;
+      }
+
+      .btn {
+        cursor: pointer;
+      }
+      .form {
+        display: none;
       }
     `
   }
@@ -121,24 +171,17 @@ export class MvCard extends LitElement {
   constructor() {
     super()
 
-    this.data=[]
+    this.data = []
   }
 
   render() {
-    let options = {...this.data}
+    let options = { ...this.data }
 
- //   options.map((i,index) => console.log(index))
-
-    console.log(options)
-
-  return  html`
+    return html`
       <div class="card-component">
         <div class="avatar-container">
           <div class="white-circle">
-            <img
-              class="avatar"
-              src="${options.picture}"
-            />
+            <img class="avatar" src="${options.picture}" />
           </div>
         </div>
         <div class="card-container">
@@ -166,59 +209,185 @@ export class MvCard extends LitElement {
           <fieldset>
             <legend>Online identity</legend>
             <div>
-              <label>Social Network : </label>
+              <label>Social Network :</label>
 
               ${this.getSocialNetworks(options)}
-    </div>
-            </fieldset>
-            <fieldset>
+            </div>
+          </fieldset>
+          <fieldset>
             <legend>Contact Details</legend>
             <div>
-              <label>E-mail : </label>
+              <label>E-mail :</label>
               ${options.email}
             </div>
             <div>
-              <label>Phone : </label>
+              <label>Phone :</label>
               ${this.getPhoneNumbers(options)}
             </div>
-
           </fieldset>
-        </div>
+          </div>
+
+          <div class="form" id="form1">
+            <fieldset>
+              <legend>Locations</legend>
+              <div>
+                <label>places :</label>
+
+                <input type="text" class="input" />
+              </div>
+
+          
+              <div>
+                <label>visited places :</label>
+
+                <input type="text" class="input" />
+              </div>
+            </fieldset>
+          </div>
+
+
+          <div class="form" id="form2">
+            <fieldset>
+              <legend>Contact Details</legend>
+              <div>
+                <label>Email #1 :</label>
+
+                <input type="text" class="input" />
+              </div>
+
+          
+              <div>
+                <label>Phone #1 :</label>
+
+                <input type="text" class="input" />
+              </div>
+
+
+              <div>
+                <label>PGK Key #1 :</label>
+
+                <input type="text" class="input" />
+              </div>
+
+
+            </fieldset>
+          </div>
+
+        
+
+
+         
+      
+
+          <h3 id="form3-btn" class="btn" @click="${() => {
+            this.toggle('.form3')
+          }}"><span>Private Life</span></h3>
+          
+
+          <div class="form3 form"  data-data="hide">
+          <fieldset>
+   
+          <div>
+          <label>Acquaintances :</label>
+          
+          
+          </div>
+          
+          
+          <div>
+          <label>Relatives :</label>
+          
+          
+          </div>
+          
+          
+          <div>
+          <label>Hobbies :</label>
+          
+          
+          </div>
+          
+          </fieldset>
+          </div>
+
+
+
+
+          <h3 id="form4-btn" class="btn" @click="${() => {
+            this.toggle('.form4')
+          }}"><span>Professionnal life</span></h3>
+          
+
+          <div class="form4 form" data-data="hide">
+          <fieldset>
+          <div>
+          <label>Acquaintances :</label>
+          
+          
+          </div>
+          
+          
+          <div>
+          <label>Relatives :</label>
+          
+          
+          </div>
+          
+          
+          <div>
+          <label>Hobbies :</label>
+          
+          
+          </div>
+          
+          </fieldset>
+          </div>
+  
+    
+          
+
+
+
       </div>
-    `
+            </div>`
   }
 
   firstUpdated() {}
 
-getSocialNetworks(options){
+  toggle(selector) {
+    selector = this.shadowRoot.querySelector(selector)
+    if (selector.dataset.data == 'hide') {
+      selector.classList.add('show')
+      selector.dataset.data = 'show'
+    } else {
+      selector.classList.remove('show')
+      selector.dataset.data = 'hide'
+    }
+  }
 
+  renderForm() {}
 
+  getSocialNetworks(options) {
+    let socialNetworks = ''
+    for (let i = 0; i < Object.keys(options.socialnetwork).length; i++) {
+      socialNetworks = socialNetworks + ', ' + options.socialnetwork[i]
+    }
+    return html`
+      ${socialNetworks}
+    `
+  }
 
-  let socialNetworks = ''
-  for (let i=0;i<Object.keys(options.socialnetwork).length;i++){  socialNetworks = socialNetworks +', '+ options.socialnetwork[i]  }
-return  html `${socialNetworks}`
+  getPhoneNumbers(options) {
+    let phoneNumbers = ''
 
+    for (let i = 0; i < Object.keys(options.phone).length; i++) {
+      phoneNumbers = phoneNumbers + ', ' + options.phone[i]
+    }
 
-
-
-
-}
-
-getPhoneNumbers(options){
-
-  let phoneNumbers = ''
-  
-  for (let i=0;i<Object.keys(options.phone).length;i++){  phoneNumbers = phoneNumbers +', '+ options.phone[i]  }
-
- return  html `${phoneNumbers}`
-
-}
-
-
-
-
-
-
+    return html`
+      ${phoneNumbers}
+    `
+  }
 }
 
 window.customElements.define('mv-card', MvCard)
