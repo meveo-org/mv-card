@@ -124,6 +124,8 @@ export class MvCard extends LitElement {
         width: 70%;
         float: right;
         box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+        padding: 0 4%;
+        font-size: 10px;
       }
       .forminput label {
         width: 50%;
@@ -142,14 +144,13 @@ export class MvCard extends LitElement {
         border-bottom: solid 1px #ccc;
         line-height: 30px;
 
- 
-        background-image: url( './src/img/icon-+.png' );
-      background-position : 90% ;
-    background-repeat:no-repeat;
-  }
-      
+        background-image: url('./src/img/icon-+.png');
+        background-position: 90%;
+        background-repeat: no-repeat;
+      }
+
       h3 span {
-        background-color:#fff;
+        background-color: #fff;
         padding: 0 20px;
       }
 
@@ -163,13 +164,18 @@ export class MvCard extends LitElement {
       .form {
         display: none;
       }
-      .content{padding-top:25px;}
+      .content {
+        padding-top: 25px;
+      }
+      .left{float:left;margin-right: 100%;}
+      .right{float:right;margin-left: 100%;}
     `
   }
 
   static get properties() {
     return {
       data: { type: Array, attribute: false, reflect: true },
+      position: { type: Array, attribute: false, reflect: true },
     }
   }
 
@@ -177,14 +183,18 @@ export class MvCard extends LitElement {
     super()
 
     this.data = []
+    this.position = []
   }
 
   render() {
     let options = { ...this.data }
+    let position = { ...this.position }
+
+
 
     return html`
       <div class="card-component">
-        <div class="avatar-container">
+        <div class="avatar-container  ${position.value}">
           <div class="white-circle">
             <img class="avatar" src="${options.picture}" />
           </div>
@@ -192,12 +202,18 @@ export class MvCard extends LitElement {
         <div class="card-container">
           <div class="name">
             ${options.name}
-            <strong>${options.surname}</strong><img src="./src/img/icon-gender-${options.gender}.png"/>
+            <strong>${
+              options.surname
+            }</strong><img src="./src/img/icon-gender-${options.gender}.png"/>
           </div>
           <div class="birth">
-            <div class="birthday"><img src="./src/img/icon-date.png"/> ${options.birthday}</div>
+            <div class="birthday"><img src="./src/img/icon-date.png"/> ${
+              options.birthday
+            }</div>
             |
-            <div class="city">${options.city} <img src="./src/img/icon-location.png"/></div>
+            <div class="city">${
+              options.city
+            } <img src="./src/img/icon-location.png"/></div>
           </div>
           <div class="infos">
             <div class="nationality">

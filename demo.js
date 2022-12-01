@@ -27,6 +27,7 @@ export class MvCardDemo extends LitElement {
     return {
       theme: { type: String, attribute: true },
       data: { type: Object, attribute: false, reflect: true },
+      position:  { type: Object, attribute: false, reflect: true },
     }
   }
 
@@ -46,6 +47,7 @@ export class MvCardDemo extends LitElement {
     super()
     this.theme = 'light'
     this.data = {}
+    this.position = {}
     
   }
 
@@ -76,7 +78,7 @@ export class MvCardDemo extends LitElement {
       </fieldset>
 
       <mv-container .theme="${theme}">
-        <mv-card .data="${PROFILE_DATA}"></mv-card>
+        <mv-card .data="${PROFILE_DATA}" .position="${{value:'center'}}"></mv-card>
       </mv-container>
 
 
