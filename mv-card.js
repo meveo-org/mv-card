@@ -21,31 +21,6 @@ export class MvCard extends LitElement {
         margin-top: 100px;
         padding-bottom: 30px;
       }
-
-      .avatar-container {
-        position: relative;
-        bottom: 50px;
-        margin: auto;
-        display: inline-block;
-      }
-
-      .white-circle {
-        border-radius: 50%;
-        text-align: center;
-        display: inline-block;
-        border: solid 4px rgb(255, 255, 255);
-        margin: auto;
-      }
-      .white-circle img {
-        border: solid 2px rgb(3, 140, 252);
-      }
-
-      .avatar {
-        width: 90px;
-        height: 90px;
-        border: 3px solid var(--circle-color);
-        border-radius: var(--circle-radius, 50%);
-      }
     `
   }
 
@@ -58,26 +33,15 @@ export class MvCard extends LitElement {
 
   constructor() {
     super()
-
-    this.data = []
-    this.position = []
   }
 
   render() {
-    let options = { ...this.data }
-    let position = { ...this.position }
-
     return html`
       <div class="card-component">
         <div class="card-container">
           <div class="content" id="card">
-            <div class="avatar-container  ${position.value}">
-              <div class="white-circle">
-                <img class="avatar" src="${options.picture}" />
-              </div>
-            </div>
-
-            <slot name="mycard"></slot>
+            <slot name="header"></slot>
+            <slot name="body"></slot>
           </div>
         </div>
       </div>

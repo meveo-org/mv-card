@@ -42,6 +42,30 @@ export class MvCardDemo extends LitElement {
         --mv-select-border: 1px solid #4e686d;
       }
 
+      .avatar-container {
+        position: relative;
+        bottom: 50px;
+        margin: auto;
+        display: inline-block;
+      }
+
+      .white-circle {
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+        border: solid 4px rgb(255, 255, 255);
+        margin: auto;
+      }
+      .white-circle img {
+        border: solid 2px rgb(3, 140, 252);
+      }
+
+      .avatar {
+        width: 90px;
+        height: 90px;
+        border: 3px solid var(--circle-color);
+        border-radius: var(--circle-radius, 50%);
+      }
       .name {
         position: relative;
         bottom: 30px;
@@ -204,8 +228,8 @@ export class MvCardDemo extends LitElement {
   render() {
     const { theme } = this
     let options = { ...PROFILE_DATA }
+    let position = 'center'
 
-    console.log(options)
     return html`
       <fieldset>
         <legend>Theme</legend>
@@ -231,35 +255,41 @@ export class MvCardDemo extends LitElement {
       </fieldset>
 
       <mv-container .theme="${theme}">
-        <mv-card .data="${PROFILE_DATA}" .position="${{ value: 'center' }}">
-          <div slot="mycard">
+        <mv-card .data="${PROFILE_DATA}" .position="${position}">
+          <div slot="header" class="header">
+            <div class="avatar-container  ${position}">
+              <div class="white-circle">
+                <img class="avatar" src="${options.picture}" />
+              </div>
+            </div>
+          </div>
+          <div slot="body">
             <div class="name">
               ${options.name}
               <strong>${options.surname}</strong>
               <img src="./src/img/icon-gender-${options.gender}.png" />
             </div>
 
-
-          <div class="birth">
-            <div class="birthday">
-              <img src="./src/img/icon-date.png" />
-              ${options.birthday}
+            <div class="birth">
+              <div class="birthday">
+                <img src="./src/img/icon-date.png" />
+                ${options.birthday}
+              </div>
+              |
+              <div class="city">
+                ${options.city}
+                <img src="./src/img/icon-location.png" />
+              </div>
             </div>
-            |
-            <div class="city">
-              ${options.city}
-              <img src="./src/img/icon-location.png" />
-            </div>
-          </div>
-          <div class="infos">
-            <div class="nationality">
-              <strong>Nationality :</strong>
-              ${options.nationality}
-            </div>
-            <div class="aliasses">
-              <strong>Aliases :</strong>
-              ${options.alias}
-            </div>
+            <div class="infos">
+              <div class="nationality">
+                <strong>Nationality :</strong>
+                ${options.nationality}
+              </div>
+              <div class="aliasses">
+                <strong>Aliases :</strong>
+                ${options.alias}
+              </div>
             </div>
 
             <fieldset>
@@ -372,7 +402,7 @@ export class MvCardDemo extends LitElement {
                   <label>Hobbies :</label>
                 </div>
               </fieldset>
-            </div>        
+            </div>
           </div>
         </mv-card>
       </mv-container>
