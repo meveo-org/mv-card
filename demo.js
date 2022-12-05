@@ -164,13 +164,13 @@ export class MvCardDemo extends LitElement {
 
             <div class="birth">
               <div class="birthday">
-                <img src="./src/img/identity/icon-date.png" />
+
                 ${options.birthday}
               </div>
               |
               <div class="city">
                 ${options.city}
-                <img src="./src/img/identity/icon-location.png" />
+
               </div>
             </div>
             <div class="infos">
