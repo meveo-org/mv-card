@@ -4,7 +4,13 @@ import '@meveo-org/mv-container'
 
 import './mv-card.js'
 
-
+import './src/spv2/mv-identity-card.js'
+import './src/spv2/mv-total-card.js'
+import './src/spv2/mv-social-analysis-card.js'
+import './src/spv2/mv-cross-analysis-card.js'
+import './src/spv2/mv-social-detection-card.js'
+import './src/spv2/mv-online-mentions-card.js'
+import './src/spv2/mv-social-monitoring-card.js'
 
 
 
@@ -19,7 +25,9 @@ const PROFILE_DATA = {
   city: 'Moscow',
   nationality: 'RU',
   alias: 'navaninich',
-
+  socialnetwork: { 0: 'instagram', 1: 'pinterest' },
+  email: 'a.navalny@yandex.com',
+  phone: { 0: '+7 4322 5384 11', 1: '+7 4543 9921 03' },
 }
 
 export class MvCardDemo extends LitElement {
@@ -57,7 +65,6 @@ export class MvCardDemo extends LitElement {
       }
       .white-circle img {
         border: solid 2px rgb(3, 140, 252);
-        position:relative;bottom:30px;
       }
 
       .avatar {
@@ -68,37 +75,6 @@ export class MvCardDemo extends LitElement {
       }
 
 
-
-      .name {
-        position: relative;
-        bottom: 30px;
-      }
-      .birth {
-        position: relative;
-        font-size: 10px;
-        color: #ccc;
-        bottom: 20px;
-      }
-      .birth .birthday {
-        display: inline;
-      }
-      .birth .city {
-        display: inline;
-      }
-
-      .infos {
-        font-size: 11px;
-        padding-bottom:30px;
-      }
-      .infos .nationality {
-        float: left;
-        width: 50%;
-        text-align: center;
-      }
-      .infos .aliases {
-        width: 50%;
-        text-align: center;
-      }
 
 
 
@@ -154,42 +130,17 @@ export class MvCardDemo extends LitElement {
                 <img class="avatar" src="${options.picture}" />
               </div>
           </div>
-
-
-          <div slot="body" class="body">
-            <div class="name">
-              ${options.name}
-              <strong>${options.surname}</strong>
-            </div>
-
-            <div class="birth">
-              <div class="birthday">
-                <img src="./src/img/identity/icon-date.png" />
-                ${options.birthday}
-              </div>
-              |
-              <div class="city">
-                ${options.city}
-                <img src="./src/img/identity/icon-location.png" />
-              </div>
-            </div>
-            <div class="infos">
-              <div class="nationality">
-                <strong>Nationality :</strong>
-                ${options.nationality}
-              </div>
-              <div class="aliasses">
-                <strong>Aliases :</strong>
-                ${options.alias}
-              </div>
-            </div>
-
-
-
         </mv-card>
 
 
 
+<mv-identity-card ></mv-identity-card>
+<mv-total-card></mv-total-card>
+<mv-social-analysis-card></mv-social-analysis-card>
+<mv-cross-analysis-card></mv-cross-analysis-card>
+<mv-social-detection-card></mv-social-detection-card>
+<mv-online-mentions-card></mv-online-mentions-card>
+<mv-social-monitoring-card></mv-social-monitoring-card>
  
 
 
