@@ -17,11 +17,14 @@ export class MvCard extends LitElement {
         border-radius: 15px;
         margin-top: 75px;
         font-family: Arial;
-
         margin: auto;
         margin-top: 100px;
-        padding-bottom: 30px;
+
       }
+
+      .left{text-align:left;width:100%;}
+      .right{text-align:right;width:100%;}
+      .center{text-align:center;width:100%;}
     `
   }
 
@@ -41,7 +44,9 @@ export class MvCard extends LitElement {
       <div class="card-component">
         <div class="card-container">
           <div class="content" id="card">
-            <slot name="header"></slot>
+            <div class="header ${this.position}">
+              <slot name="header"></slot>
+            </div>
             <slot name="body"></slot>
           </div>
         </div>

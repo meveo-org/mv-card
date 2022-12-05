@@ -1,17 +1,13 @@
-import {
-  LitElement,
-  html,
-  css,
-} from 'lit'
+import { LitElement, html, css } from 'lit'
 import '@meveo-org/mv-button'
 import '@meveo-org/mv-container'
 
 import './mv-card.js'
-import './mv-identity-card.js'
-import './mv-total-card.js'
-import './mv-social-analysis-card.js'
-import './mv-cross-analysis-card.js'
-import './mv-social-detection-card.js'
+
+
+
+
+
 
 const PROFILE_DATA = {
   name: 'Alex',
@@ -23,9 +19,7 @@ const PROFILE_DATA = {
   city: 'Moscow',
   nationality: 'RU',
   alias: 'navaninich',
-  socialnetwork: { 0: 'instagram', 1: 'pinterest' },
-  email: 'a.navalny@yandex.com',
-  phone: { 0: '+7 4322 5384 11', 1: '+7 4543 9921 03' },
+
 }
 
 export class MvCardDemo extends LitElement {
@@ -47,6 +41,70 @@ export class MvCardDemo extends LitElement {
         --mv-select-border: 1px solid #4e686d;
       }
 
+      .avatar-container {
+        position: relative;
+        bottom: 50px;
+        margin: auto;
+        display: inline-block;
+      }
+
+      .white-circle {
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+        border: solid 4px rgb(255, 255, 255);
+        margin: auto;
+      }
+      .white-circle img {
+        border: solid 2px rgb(3, 140, 252);
+        position:relative;bottom:30px;
+      }
+
+      .avatar {
+        width: 90px;
+        height: 90px;
+        border: 3px solid var(--circle-color);
+        border-radius: var(--circle-radius, 50%);
+      }
+
+
+
+      .name {
+        position: relative;
+        bottom: 30px;
+      }
+      .birth {
+        position: relative;
+        font-size: 10px;
+        color: #ccc;
+        bottom: 20px;
+      }
+      .birth .birthday {
+        display: inline;
+      }
+      .birth .city {
+        display: inline;
+      }
+
+      .infos {
+        font-size: 11px;
+        padding-bottom:30px;
+      }
+      .infos .nationality {
+        float: left;
+        width: 50%;
+        text-align: center;
+      }
+      .infos .aliases {
+        width: 50%;
+        text-align: center;
+      }
+
+
+
+
+
+
     `
   }
 
@@ -60,6 +118,8 @@ export class MvCardDemo extends LitElement {
   render() {
     const { theme } = this
 
+    let options = { ...PROFILE_DATA }
+    let position = 'left'
 
     return html`
       <fieldset>
@@ -86,22 +146,59 @@ export class MvCardDemo extends LitElement {
       </fieldset>
 
       <mv-container .theme="${theme}">
+        <mv-card .data="${options}" .position="${position}">
+
+
+          <div slot="header" class="header">
+              <div class="white-circle">
+                <img class="avatar" src="${options.picture}" />
+              </div>
+          </div>
+
+
+          <div slot="body" class="body">
+            <div class="name">
+              ${options.name}
+              <strong>${options.surname}</strong>
+            </div>
+
+            <div class="birth">
+              <div class="birthday">
+                <img src="./src/img/identity/icon-date.png" />
+                ${options.birthday}
+              </div>
+              |
+              <div class="city">
+                ${options.city}
+                <img src="./src/img/identity/icon-location.png" />
+              </div>
+            </div>
+            <div class="infos">
+              <div class="nationality">
+                <strong>Nationality :</strong>
+                ${options.nationality}
+              </div>
+              <div class="aliasses">
+                <strong>Aliases :</strong>
+                ${options.alias}
+              </div>
+            </div>
 
 
 
-      <mv-identity-card ></mv-identity-card>
-      <mv-total-card></mv-total-card>
-      <mv-social-analysis-card></mv-social-analysis-card>
-      <mv-cross-analysis-card></mv-cross-analysis-card>
-      <mv-social-detection-card></mv-social-detection-card>
+        </mv-card>
 
-        
+
+
+ 
+
+
+
       </mv-container>
     `
   }
 
   firstUpdated() {}
-
 
   changeTheme = (originalEvent) => {
     const {
