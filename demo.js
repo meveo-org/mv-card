@@ -146,7 +146,7 @@ export class MvCardDemo extends LitElement {
       </fieldset>
 
       <mv-container .theme="${theme}">
-        <mv-card .data="${options}" .position="${position}">
+        <mv-card position="${position}">
 
 
           <div slot="header" class="header">

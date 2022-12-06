@@ -3,11 +3,10 @@
     "@meveo-org/mv-button": "^1.0.2",
     "@meveo-org/mv-container": "^1.0.0",
     "@meveo-org/mv-theme": "^1.0.0",
-    "lit": "^2.4.1",
-    "webpack": "^5.75.0"
+    "lit": "^2.4.1"
   },
   "scripts": {
-    "dev": "webpack serve -c webpack.config.cjs",
+    "dev": "es-dev-server --node-resolve --watch",
     "build": "webpack ./mv-card.js --output-filename=index.js --mode=development"
   },
   "devDependencies": {
@@ -15,7 +14,6 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.0"
+    "es-dev-server": "^1.46.1"
   }
 }

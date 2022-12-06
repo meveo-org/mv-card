@@ -3,7 +3,6 @@ import {
   html,
   css,
 } from 'lit'
-//https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js
 
 export class MvCard extends LitElement {
   static get styles() {
@@ -30,8 +29,7 @@ export class MvCard extends LitElement {
 
   static get properties() {
     return {
-      data: { type: Array, attribute: false, reflect: true },
-      position: { type: Array, attribute: false, reflect: true },
+      position: { type: String, attribute: "position" },
     }
   }
 
