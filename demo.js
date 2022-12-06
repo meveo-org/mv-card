@@ -11,6 +11,7 @@ import './src/spv2/mv-cross-analysis-card.js'
 import './src/spv2/mv-social-detection-card.js'
 import './src/spv2/mv-online-mentions-card.js'
 import './src/spv2/mv-social-monitoring-card.js'
+import './src/spv2/mv-assets-detection-card.js'
 
 
 
@@ -141,6 +142,7 @@ export class MvCardDemo extends LitElement {
 <mv-social-detection-card></mv-social-detection-card>
 <mv-online-mentions-card></mv-online-mentions-card>
 <mv-social-monitoring-card></mv-social-monitoring-card>
+<mv-assets-detection-card></mv-assets-detection-card>
  
 
 
