@@ -15,5 +15,21 @@
     "eslint-plugin-import": "^2.26.0",
     "webpack": "^5.74.0",
     "es-dev-server": "^1.46.1"
-  }
+  },
+  "name": "mv-card",
+  "version": "1.0.0",
+  "main": "mv-card.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meveo-org/mv-card.git"
+  },
+  "keywords": [
+    "card"
+  ],
+  "author": "Webdrone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meveo-org/mv-card/issues"
+  },
+  "homepage": "https://github.com/meveo-org/mv-card#readme"
 }
