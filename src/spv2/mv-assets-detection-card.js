@@ -41,7 +41,7 @@ export class MvAssetsDetectionCard extends LitElement {
         --mv-select-border: 1px solid #4e686d;
       }
       .total-card{padding:20px;}
-      .header,.body {text-align:left;padding:20px 20px 0 20px;font-size:24px;background-color: #5DC9B6;}
+      .header,.body {text-align:left;padding:20px 20px 0 20px;font-size:24px;background-color: #5DC9B6;width:300px;}
       .header{color:#000;border-radius:15px 15px 0 0;}
       .body{color: #22788E;border-radius:0px 0px 15px 15px;}
       .body{padding-bottom:0;text-align:center;}

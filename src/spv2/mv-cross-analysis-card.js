@@ -23,7 +23,7 @@ export class MvCrossAnalysisCard extends LitElement {
         --mv-select-border: 1px solid #4e686d;
       }
       .total-card{padding:20px;}
-      .header,.body {text-align:left;padding:20px 20px 0 20px;font-size:24px;}
+      .header,.body {text-align:left;padding:20px 20px 0 20px;font-size:24px;width:300px;}
       .header{color:#000;}
       .body{color: #22788E;}
       .body{padding-bottom:0;text-align:center;}

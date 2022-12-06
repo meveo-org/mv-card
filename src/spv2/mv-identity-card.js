@@ -216,6 +216,7 @@ export class MvIdentityCard extends LitElement {
         margin-bottom: 20px;
       }
       .body{    padding-bottom: 30px;}
+      .header,.body{width:300px;}
       .white-circle{position:relative;bottom:30px;}
     `
   }

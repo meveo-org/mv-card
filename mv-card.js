@@ -9,7 +9,7 @@ export class MvCard extends LitElement {
   static get styles() {
     return css`
       .card-component {
-        width: 300px;
+        
         height: auto;
         text-align: center;
         background-color: #fff;
@@ -19,6 +19,7 @@ export class MvCard extends LitElement {
         font-family: Arial;
         margin: auto;
         margin-top: 100px;
+        display:table;
 
       }
 

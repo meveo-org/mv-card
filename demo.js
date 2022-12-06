@@ -12,24 +12,12 @@ import './src/spv2/mv-social-detection-card.js'
 import './src/spv2/mv-online-mentions-card.js'
 import './src/spv2/mv-social-monitoring-card.js'
 import './src/spv2/mv-assets-detection-card.js'
+import './src/spv2/mv-overview-card.js'
 
 
 
 
-const PROFILE_DATA = {
-  name: 'Alex',
-  surname: 'NAVALMY',
-  gender: 'male',
-  picture:
-    'https://thispersondoesnotexist.com/image?rand_number=0.9769817276185417',
-  birthday: '10/09/1972',
-  city: 'Moscow',
-  nationality: 'RU',
-  alias: 'navaninich',
-  socialnetwork: { 0: 'instagram', 1: 'pinterest' },
-  email: 'a.navalny@yandex.com',
-  phone: { 0: '+7 4322 5384 11', 1: '+7 4543 9921 03' },
-}
+
 
 export class MvCardDemo extends LitElement {
   static get properties() {
@@ -87,51 +75,17 @@ export class MvCardDemo extends LitElement {
 
   constructor() {
     super()
-    this.theme = 'light'
-    this.data = {}
-    this.position = {}
+
   }
 
   render() {
-    const { theme } = this
 
-    let options = { ...PROFILE_DATA }
-    let position = 'left'
 
     return html`
-      <fieldset>
-        <legend>Theme</legend>
-        <label>
-          <input
-            type="radio"
-            name="theme"
-            value="light"
-            checked
-            @change="${this.changeTheme}"
-          />
-          Light
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="theme"
-            value="dark"
-            @change="${this.changeTheme}"
-          />
-          Dark
-        </label>
-      </fieldset>
-
-      <mv-container .theme="${theme}">
-        <mv-card .data="${options}" .position="${position}">
 
 
-          <div slot="header" class="header">
-              <div class="white-circle">
-                <img class="avatar" src="${options.picture}" />
-              </div>
-          </div>
-        </mv-card>
+
+
 
 
 
@@ -143,22 +97,18 @@ export class MvCardDemo extends LitElement {
 <mv-online-mentions-card></mv-online-mentions-card>
 <mv-social-monitoring-card></mv-social-monitoring-card>
 <mv-assets-detection-card></mv-assets-detection-card>
+<mv-overview-card></mv-overview-card>
  
 
 
 
-      </mv-container>
+
     `
   }
 
   firstUpdated() {}
 
-  changeTheme = (originalEvent) => {
-    const {
-      target: { value },
-    } = originalEvent
-    this.theme = value
-  }
+
 }
 
 customElements.define('mv-card-demo', MvCardDemo)
