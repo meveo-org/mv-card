@@ -97,47 +97,72 @@ export class MvOverviewCard extends LitElement {
         width: 500px;
       }
       .body {
-    height: 160px;
+        height: 160px;
     top: 40px;
     position: relative;
-}
+    display: table;
+    height: 257px;
+      }
       .white-circle {
         position: relative;
         bottom: 30px;
         background-color: #fff;
-        z-index:1;
+        z-index: 1;
       }
-      .left-column {
-    background-color: rgb(9, 105, 129);
-    height: 100%;
+      .left-column {    background-color: rgb(9, 105, 129);
+    height: 65%;
     width: 65px;
     float: left;
     border-radius: 0px 0px 0px 15px;
     overflow: hidden;
-    position: relative;
-    bottom: 40px;
-}
-      .left-column a {width:100%;height:33%;display:block;background-color: #096981;    box-shadow: rgb(0 0 0) 0px -5px 10px;float:right;}
-      .left-column a:hover{background-color:#0698B4;}
-      .left-column a img{width: 15px;
-    top: 20px;
-    position: relative;}
-    .content {
-    position: relative;
-    top: 25px;
-    text-align:left;
-    padding-left:100px;
-   color: #4f4f7a;line-height:30px;font-size : 12px;
-}
-.content span{float:right;margin-right:30px;}
-.content>div{border-bottom:solid 1px#E2E2E2;width :90%;}
+    position: absolute;
+    top: 50px;
+    display: table;
+      }
+      .left-column a {
+        width: 100%;
+        height: 33%;
+        display: block;
+        background-color: #096981;
+        box-shadow: rgb(0 0 0) 0px -5px 10px;
+        float: right;
+      }
+      .left-column a:hover {
+        background-color: #0698b4;
+      }
+      .left-column a img {
+        width: 15px;
+        top: 20px;
+        position: relative;
+      }
+      .content {
+        position: relative;
+        top: 25px;
+        text-align: left;
+        padding-left: 100px;
+        color: #4f4f7a;
+        line-height: 30px;
+        font-size: 12px;
+      }
+      .content span {
+        float: right;
+        margin-right: 30px;
+      }
+      .content > div {
+        border-bottom: solid 1px#E2E2E2;
+        width: 90%;
+      }
 
-.header {
-    height: 30px;
-    margin-bottom: -60px;
-}
-
-
+      .header {
+        height: 30px;
+        margin-bottom: -60px;
+      }
+      .slide {
+        width: 25%;
+        float: left;
+        text-align: center;
+      }
+     
     `
   }
 
@@ -187,6 +212,29 @@ export class MvOverviewCard extends LitElement {
               <div class="content">
               <div class="status"><strong>Status</strong><span>In Progress</span></div>
               <div class="creation-date"><strong>Creation Date</strong><span>Dec 16 2021</span></div>
+              <mv-slideshow .imgdisplay="${3}">
+
+        <div slot="slides">
+          <div class="slide slide1">
+social detection
+          </div>
+          <div class="slide slide2">
+assets
+          </div>
+          <div class="slide slide3">
+online mentions
+          </div>
+          <div class="slide slide4">
+social analysis
+          </div>
+          <div class="slide slide4">
+social monitoring
+          </div>
+
+        </div>
+        <div slot="right-arrow"><img src="./src/img/overview/Vector 7.png"/></div>
+        <div slot="left-arrow"><img src="./src/img/overview/Vector 7.png"/></div>
+      </mv-slideshow>
               </div>
 
             <div class="left-column">

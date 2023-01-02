@@ -3,6 +3,7 @@ import '@meveo-org/mv-button'
 import '@meveo-org/mv-container'
 
 import './mv-card.js'
+import './mv-slideshow.js'
 
 import './src/spv2/mv-identity-card.js'
 import './src/spv2/mv-total-card.js'
@@ -13,11 +14,6 @@ import './src/spv2/mv-online-mentions-card.js'
 import './src/spv2/mv-social-monitoring-card.js'
 import './src/spv2/mv-assets-detection-card.js'
 import './src/spv2/mv-overview-card.js'
-
-
-
-
-
 
 export class MvCardDemo extends LitElement {
   static get properties() {
@@ -62,53 +58,36 @@ export class MvCardDemo extends LitElement {
         border: 3px solid var(--circle-color);
         border-radius: var(--circle-radius, 50%);
       }
-
-
-
-
-
-
-
-
     `
   }
 
   constructor() {
     super()
-
   }
 
   render() {
-
-
     return html`
+      <mv-identity-card></mv-identity-card>
 
+      <mv-total-card></mv-total-card>
 
+      <mv-social-analysis-card></mv-social-analysis-card>
 
+      <mv-cross-analysis-card></mv-cross-analysis-card>
 
+      <mv-social-detection-card></mv-social-detection-card>
 
+      <mv-online-mentions-card></mv-online-mentions-card>
 
+      <mv-assets-detection-card></mv-assets-detection-card>
 
-<mv-identity-card ></mv-identity-card>
-<mv-total-card></mv-total-card>
-<mv-social-analysis-card></mv-social-analysis-card>
-<mv-cross-analysis-card></mv-cross-analysis-card>
-<mv-social-detection-card></mv-social-detection-card>
-<mv-online-mentions-card></mv-online-mentions-card>
-<mv-social-monitoring-card></mv-social-monitoring-card>
-<mv-assets-detection-card></mv-assets-detection-card>
-<mv-overview-card></mv-overview-card>
- 
-
-
+      <mv-overview-card></mv-overview-card>
 
 
     `
   }
 
   firstUpdated() {}
-
-
 }
 
 customElements.define('mv-card-demo', MvCardDemo)
