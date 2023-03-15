@@ -16,7 +16,7 @@
     "webpack": "^5.74.0",
     "es-dev-server": "^1.46.1"
   },
-  "name": "mv-card",
+  "name": "@meveo-org/mv-card",
   "version": "1.0.2",
   "main": "mv-card.js",
   "repository": {

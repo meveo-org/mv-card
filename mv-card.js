@@ -24,7 +24,7 @@ export class MvCard extends LitElement {
       .card-body {
         flex: 1 1 auto;
         overflow-y: auto;
-        min-height: 0px;
+        height: 0px;
       }
 
       .left{text-align:left;width:100%;}
