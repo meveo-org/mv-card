@@ -17,7 +17,7 @@
     "es-dev-server": "^1.46.1"
   },
   "name": "mv-card",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "mv-card.js",
   "repository": {
     "type": "git",
