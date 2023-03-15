@@ -7,9 +7,16 @@ import {
 export class MvCard extends LitElement {
   static get styles() {
     return css`
+
+      :host {
+        display: flex;
+        flex-direction: column;
+      }
+
       .card-component {
         width: 300px;
         height: auto;
+        flex-grow: 1;
         text-align: center;
         background-color: #fff;
         box-shadow: 0px 0px 40px 2px rgb(71 57 154 / 50%);
@@ -18,7 +25,6 @@ export class MvCard extends LitElement {
         font-family: Arial;
         margin: auto;
         margin-top: 100px;
-
       }
 
       .left{text-align:left;width:100%;}
