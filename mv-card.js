@@ -7,7 +7,6 @@ import {
 export class MvCard extends LitElement {
   static get styles() {
     return css`
-
       :host {
         display: flex;
         flex-direction: column;
@@ -17,17 +16,28 @@ export class MvCard extends LitElement {
         margin: auto;
         font-family: var(--font-family, Arial);
         background-color: var(--card-bg-color, #fff);
-        height: 100%;
+        height: var(--card-height, auto);
       }
 
       .card-body {
         flex: 1 1 auto;
-        overflow-y: auto;
+        overflow-y: var(--card-overflow, auto);
       }
 
-      .left{text-align:left;width:100%;}
-      .right{text-align:right;width:100%;}
-      .center{text-align:center;width:100%;}
+      .left {
+        text-align:left;
+        width:100%;
+      }
+
+      .right {
+        text-align:right;
+        width:100%;
+      }
+
+      .center{
+        text-align:center;
+        width:100%;
+      }
     `
   }
 
