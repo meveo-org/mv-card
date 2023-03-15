@@ -67,14 +67,10 @@ export class MvCardDemo extends LitElement {
         border-radius: var(--circle-radius, 50%);
       }
 
-
-
       .name {
-        position: relative;
         bottom: 30px;
       }
       .birth {
-        position: relative;
         font-size: 10px;
         color: #ccc;
         bottom: 20px;
@@ -146,7 +142,7 @@ export class MvCardDemo extends LitElement {
       </fieldset>
 
       <mv-container .theme="${theme}">
-        <mv-card position="${position}">
+        <mv-card position="${position}" style="height:50vh; width: 300px">
 
 
           <div slot="header" class="header">
@@ -182,6 +178,19 @@ export class MvCardDemo extends LitElement {
                 <strong>Aliases :</strong>
                 ${options.alias}
               </div>
+              <p>
+                
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet, ligula eget bibendum tincidunt, ligula ante iaculis lorem, sed gravida ante odio non lorem. Aliquam eleifend risus et mauris eleifend, ac tincidunt nibh scelerisque. Cras pulvinar tortor ultricies dignissim varius. Nunc ex risus, ultricies quis luctus eu, euismod eget velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Ut maximus urna at sem sollicitudin mattis. Duis a ligula et nulla viverra scelerisque. Mauris ultrices leo in condimentum sollicitudin. Cras porttitor mi vulputate massa lobortis, a vehicula libero ullamcorper. Sed ornare, augue a consequat venenatis, nunc risus ullamcorper felis, nec sollicitudin metus nisi eu ex. Curabitur quis leo lectus. Nulla luctus ex sed turpis rhoncus, at posuere lorem dictum.
+
+Vivamus sollicitudin dictum enim at commodo. Mauris et maximus arcu. Mauris scelerisque urna a ultricies luctus. Ut ut orci in libero euismod viverra in nec nunc. Integer hendrerit tincidunt odio id pellentesque. Donec consectetur eget lorem ac sodales. Nullam condimentum semper purus, ac volutpat nunc tristique a. Aliquam vel ultricies velit. Phasellus et imperdiet justo. In gravida tristique neque non rutrum. Donec sit amet tortor sit amet quam vestibulum blandit. In elementum tempor dui, sed mollis tellus lobortis varius. Cras mi arcu, scelerisque vel venenatis et, fringilla at nibh. Aliquam blandit facilisis odio et consectetur. Curabitur non posuere lorem, ut sodales velit.
+
+Sed nisi ligula, commodo at dapibus at, tristique at est. Nullam non ante non augue ultricies interdum in eu mauris. Cras congue vestibulum cursus. Sed rutrum pretium nunc at sodales. Nunc ut tortor nec elit congue pretium. Duis viverra arcu sapien, in iaculis dolor sollicitudin at. Nulla facilisi. Quisque hendrerit turpis ut vehicula malesuada. Nulla tellus massa, elementum eget luctus a, placerat non mi. Donec tempus egestas posuere. Mauris auctor pretium orci, sed interdum mi. In eget consectetur magna. Vestibulum non orci venenatis metus cursus ornare nec id urna. Phasellus commodo nec felis non lacinia. Donec eget mollis augue. Sed venenatis nulla dolor, et laoreet nisi aliquam non.
+
+Donec magna justo, dignissim at tempor at, consectetur et arcu. Duis vel leo luctus, mollis felis a, auctor eros. Nunc tempus egestas pellentesque. Curabitur magna elit, aliquam eu mauris in, egestas tristique augue. Nulla rhoncus sem vel erat fermentum porttitor. Sed quis aliquet ante. Phasellus mauris magna, fermentum vel blandit a, sagittis sit amet sem.
+
+Duis vitae mauris maximus, aliquam massa et, volutpat dolor. Nam vulputate fringilla suscipit. Curabitur nisl nisi, laoreet quis risus sed, vulputate elementum est. Donec mollis vel nisi eu porta. Morbi sollicitudin, augue quis pellentesque finibus, enim sapien mollis lorem, sit amet accumsan mauris nulla in justo. Donec maximus commodo scelerisque. In non nunc vel mi finibus egestas. Integer sed nulla luctus, volutpat turpis commodo, dapibus purus. Praesent vitae mauris sit amet neque aliquet dapibus. Ut eu nibh id sapien consectetur sodales. Ut ac nulla eu lorem accumsan consectetur. Duis rutrum auctor nisi eget venenatis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In turpis tortor, feugiat eget fringilla eget, ornare nec est. 
+              </p>
             </div>
 
 

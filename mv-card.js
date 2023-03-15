@@ -11,20 +11,20 @@ export class MvCard extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
-      }
-
-      .card-component {
-        width: 300px;
-        height: auto;
-        flex-grow: 1;
         text-align: center;
-        background-color: #fff;
         box-shadow: 0px 0px 40px 2px rgb(71 57 154 / 50%);
         border-radius: 15px;
-        margin-top: 75px;
-        font-family: Arial;
         margin: auto;
-        margin-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: var(--font-family, Arial);
+        background-color: var(--card-bg-color, #fff);
+      }
+
+      .card-body {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        min-height: 0px;
       }
 
       .left{text-align:left;width:100%;}
@@ -45,16 +45,12 @@ export class MvCard extends LitElement {
 
   render() {
     return html`
-      <div class="card-component">
-        <div class="card-container">
-          <div class="content" id="card">
-            <div class="header ${this.position}">
-              <slot name="header"></slot>
-            </div>
-            <slot name="body"></slot>
-          </div>
+        <div class="header ${this.position}">
+          <slot name="header"></slot>
         </div>
-      </div>
+        <div class="card-body">
+          <slot name="body"></slot>
+        </div>
     `
   }
 }
