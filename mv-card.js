@@ -15,16 +15,14 @@ export class MvCard extends LitElement {
         box-shadow: 0px 0px 40px 2px rgb(71 57 154 / 50%);
         border-radius: 15px;
         margin: auto;
-        padding-left: 10px;
-        padding-right: 10px;
         font-family: var(--font-family, Arial);
         background-color: var(--card-bg-color, #fff);
+        height: 100%;
       }
 
       .card-body {
         flex: 1 1 auto;
         overflow-y: auto;
-        height: 0px;
       }
 
       .left{text-align:left;width:100%;}
