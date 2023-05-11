@@ -18,10 +18,22 @@ export class MvCard extends LitElement {
         background-color: var(--card-bg-color, #fff);
         height: var(--card-height, auto);
       }
+ 
+      ::-webkit-scrollbar {
+          width: var(--scrollbar-width, 9px);
+          background: var(--scrollbar-background, #CECECE);
+          -webkit-border-radius: var(--scroller-radius, 8px);
+      }
+
+      ::-webkit-scrollbar-thumb {
+          background: var(--scroller-color, #393812);
+          -webkit-border-radius: var(--scroller-radius, 8px);
+      }
 
       .card-body {
         flex: 1 1 auto;
         overflow-y: var(--card-overflow, auto);
+        scrollbar-width: thin;
       }
 
       .left {
