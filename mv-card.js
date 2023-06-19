@@ -11,7 +11,7 @@ export class MvCard extends LitElement {
         display: flex;
         flex-direction: column;
         text-align: center;
-        box-shadow: 0px 0px 40px 2px rgb(71 57 154 / 50%);
+        box-shadow: var(--box-shadow, rgba(71, 57, 154, 0.16) 8px 40px 23px 2px);
         border-radius: 15px;
         margin: auto;
         font-family: var(--font-family, Arial);
